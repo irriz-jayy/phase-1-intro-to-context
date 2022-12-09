@@ -5,7 +5,14 @@ function createEmployeeRecord(array) {
     familyName: array[1],
     title: array[2],
     payPerHour: array[3],
+    //Initialize empty arrays for the time events.
     timeInEvents: [],
     timeOutEvents: [],
   };
 }
+
+let createEmployeeRecords = function (employeeArrayData) {
+  return employeeArrayData.map(function (employeeData) {
+    return createEmployeeRecord(employeeData);
+  });
+};
