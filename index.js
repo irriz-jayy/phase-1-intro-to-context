@@ -10,9 +10,13 @@ function createEmployeeRecord(array) {
     timeOutEvents: [],
   };
 }
-
+//Creates function that takes array data in above function as arguement.
 let createEmployeeRecords = function (employeeArrayData) {
+  //creates a replica array from employee records with employee data only.
   return employeeArrayData.map(function (employeeData) {
     return createEmployeeRecord(employeeData);
   });
 };
+
+// return employeeArrayData.map(function (employeeData) {
+//   return createEmployeeRecord(employeeData);
