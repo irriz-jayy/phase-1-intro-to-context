@@ -47,3 +47,21 @@ let createTimeOutEvent = function (employee, dateStamp) {
   });
   return employee;
 };
+
+//Calculating hours worked
+let hoursWorkedOnDate = function (employee, workedHours) {
+  //Targetting employee and the time in array
+  let inEvent = employee.timeInEvents.find(function (a) {
+    //Returning as hours worked
+    return a.date === workedHours;
+  });
+
+  //Targetting employee and time out arra
+  let outEvent = employee.timeOutEvents.find(function (a) {
+    //Returning as hours worked
+    return a.date === workedHours;
+  });
+
+  //Calculates difference and returns total hours worked
+  return (outEvent.hour - inEvent.hour) / 100;
+};
