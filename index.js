@@ -18,5 +18,30 @@ let createEmployeeRecords = function (employeeArrayData) {
   });
 };
 
-// return employeeArrayData.map(function (employeeData) {
-//   return createEmployeeRecord(employeeData);
+//Create time events
+//Time in
+let createTimeInEvent = function (employee, dateStamp) {
+  //create date
+  let [date, hour] = dateStamp.split(" ");
+  //Push to hour array
+  employee.timeInEvents.push({
+    type: "TimeIn",
+    hour: parseInt(hour, 10),
+    date,
+  });
+  //Returns array with time added
+  return employee;
+};
+
+//Timeout
+let createTimeOutEvent = function (employee, dateStamp) {
+  //create date
+  let [date, hour] = dateStamp.split(" ");
+  //Push to hour array
+  employee.timeOutEvents.push({
+    type: "TimeOut",
+    hour: parseInt(hour, 10),
+    date,
+  });
+  return employee;
+};
