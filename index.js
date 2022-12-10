@@ -27,6 +27,7 @@ let createTimeInEvent = function (employee, dateStamp) {
   employee.timeInEvents.push({
     type: "TimeIn",
     hour: parseInt(hour, 10),
+    //left out to be targeted elsewhere
     date,
   });
   //Returns array with time added
@@ -41,6 +42,7 @@ let createTimeOutEvent = function (employee, dateStamp) {
   employee.timeOutEvents.push({
     type: "TimeOut",
     hour: parseInt(hour, 10),
+    //left out to be targeted elsewhere
     date,
   });
   return employee;
