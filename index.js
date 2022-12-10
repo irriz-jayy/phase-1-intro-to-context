@@ -65,3 +65,26 @@ let hoursWorkedOnDate = function (employee, workedHours) {
   //Calculates difference and returns total hours worked
   return (outEvent.hour - inEvent.hour) / 100;
 };
+
+//Calculating wages on certain day
+let wagesEarnedOnDate = function (employee, hoursWorked) {
+  //Takes hours worked on that date multiply by pay
+  let employeeWage =
+    hoursWorkedOnDate(employee, hoursWorked) * employee.payPerHour;
+  //Change to number
+  return parseFloat(employeeWage.toString());
+};
+
+//Get the dates first
+let allWagesFor = function (employee) {
+  let requiredDates = employee.timeInEvents.map(function (e) {
+    return e.date;
+  });
+
+  //Calculate amount to be paid
+  let paidAmount = requiredDates.reduce(function (memo, d) {
+    return memo + wagesEarnedOnDate(employee, d);
+  }, 0);
+
+  return paidAmount;
+};
